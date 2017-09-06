@@ -1,8 +1,6 @@
 language: csharp
 mono:
   - latest
-dotnet: 1.0.3
-dist: trusty
 script:
  ./build.sh build
  ./build.sh runTests
