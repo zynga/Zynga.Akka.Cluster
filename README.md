@@ -1,7 +1,7 @@
 # Zynga.Akka.Cluster
 Extensions to the Akka.Cluster C# Framework 
 
-[![Join the chat at https://gitter.im/zynga/Akka](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zynga/Akka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/zynga/Zynga.Akka.Cluster.svg?branch=master)](https://travis-ci.org/zynga/Zynga.Akka.Cluster) [![Join the chat at https://gitter.im/zynga/Akka](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/zynga/Akka?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 ## Building this solution
