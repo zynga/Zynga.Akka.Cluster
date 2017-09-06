@@ -111,7 +111,11 @@ fi
 ###########################################################################
 # WORKAROUND FOR MONO
 ###########################################################################
-export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.5/
+if [[ $(uname -s) == Darwin* ]]; then
+    export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.5/
+else 
+    export FrameworkPathOverride=/usr/lib/mono/4.5/
+fi
 
 ###########################################################################
 # RUN BUILD SCRIPT
