@@ -1,6 +1,0 @@
-language: csharp
-mono:
-  - latest
-script:
- ./build.sh build
- ./build.sh runTests
