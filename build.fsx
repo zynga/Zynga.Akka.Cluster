@@ -86,7 +86,6 @@ Target "Build" (fun _ ->
                 { p with
                     Project = project
                     Configuration = configuration
-                    Framework = framework
                     AdditionalArgs = ["--no-incremental"]}) // "Rebuild"  
 
     let assemblies = !! "./src/**/*.csproj" 
@@ -122,10 +121,12 @@ Target "RunTests" (fun _ ->
         | _ -> !! "./src/**/*.Tests.csproj" // if you need to filter specs for Linux vs. Windows, do it here
 
     let runSingleProject project =
-        let testDir = (Directory.GetParent project).FullName + "/bin/" + "Debug" + "/net452"
+        let testDir = (Directory.GetParent project).FullName + "/bin/" + configuration + "/net452"
+        let resultsFiles = sprintf "%s_xunit.html" (fileNameWithoutExt project)
         !! (testDir + @"\*Tests.dll") 
-            |> xUnit2 id
+            |> xUnit2 (fun p -> { p with HtmlOutputPath = Some (outputTests @@ resultsFiles) })
 
+    CreateDir outputTests
     projects |> Seq.iter (log)
     projects |> Seq.iter (runSingleProject)
 )

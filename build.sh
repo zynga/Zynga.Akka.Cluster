@@ -111,7 +111,7 @@ fi
 ###########################################################################
 # WORKAROUND FOR MONO
 ###########################################################################
-export FrameworkPathOverride=/usr/lib/mono/4.5/
+export FrameworkPathOverride=/Library/Frameworks/Mono.framework/Versions/Current/lib/mono/4.5/
 
 ###########################################################################
 # RUN BUILD SCRIPT
