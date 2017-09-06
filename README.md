@@ -43,3 +43,5 @@ If you add any new projects to the solution created with this template, be sure 
 ```
 <Import Project="..\common.props" />
 ```
+---
+Thanks to [Petabridge](https://github.com/petabridge/petabridge-dotnet-new) from the project template.
