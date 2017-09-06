@@ -1,6 +1,12 @@
 language: csharp
 mono: latest
 dist: trusty
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libunwind8-dev
 script:
   - ./build.sh build
   - ./build.sh runTests
