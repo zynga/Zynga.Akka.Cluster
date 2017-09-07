@@ -75,11 +75,6 @@ Target "BuildSolution" (fun _ ->
 
 Target "Build" (fun _ ->          
     let runSingleProject(project: string) =
-        let framework = 
-            match (project.Contains("Tests")) with
-            | true -> "netcoreapp1.1"
-            | _ -> "netstandard1.6"
-
         DotNetCli.Build
             (fun p -> 
                 { p with
