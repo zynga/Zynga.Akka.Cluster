@@ -93,7 +93,8 @@ namespace Zyng.Akka.Cluster.SplitBrain.Resolver
     private IEnumerable<AC.Member> unreachableMembers => _members.Where(x => _unreachable.Contains(x.UniqueAddress));
     private IEnumerable<AC.Member> reachableMembers => _members.Where(x => !_unreachable.Contains(x.UniqueAddress));
 
-    public IEnumerable<AC.UniqueAddress> joining => _cluster.State.Members.Where(x => x.Status == AC.MemberStatus.Joining)
+    public IEnumerable<AC.UniqueAddress> joining => _cluster.State.Members
+      .Where(x => x.Status == AC.MemberStatus.Joining)
       .Select(y => y.UniqueAddress);
 
     protected override void PreStart()
@@ -173,19 +174,19 @@ namespace Zyng.Akka.Cluster.SplitBrain.Resolver
       {
         case AC.ClusterEvent.UnreachableMember m:
           unreachableMember(m.Member);
-        break;
+          break;
         case AC.ClusterEvent.ReachableMember m:
           reachableMember(m.Member);
-        break;
+          break;
         case AC.ClusterEvent.MemberUp m:
           memberUp(m.Member);
-        break;
+          break;
         case AC.ClusterEvent.MemberRemoved m:
           memberRemoved(m.Member);
-        break;
+          break;
         case AC.ClusterEvent.LeaderChanged m:
           _isLeader = m.Leader == SelfUniqueAddress.Address;
-        break;
+          break;
         case Tick m:
         {
           var shouldAct = _isLeader && _isSelfAdded && _unreachable.Any() && _stableDeadline.IsOverdue;
@@ -215,7 +216,7 @@ namespace Zyng.Akka.Cluster.SplitBrain.Resolver
             }
           }
         }
-        break;
+          break;
       }
     }
 

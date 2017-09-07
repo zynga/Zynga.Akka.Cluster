@@ -10,7 +10,7 @@ namespace Zyng.Akka.Cluster.SplitBrain.Resolver
   {
     private ActorSystem _system;
     private readonly List<string> _essentialRoles;
-    
+
     public RoleBasedProvider(ActorSystem system)
     {
       _system = system;
@@ -20,7 +20,7 @@ namespace Zyng.Akka.Cluster.SplitBrain.Resolver
       DownRemovalMargin = config.GetTimeSpan("app.cluster.stable-after");
       _essentialRoles = config.GetStringList("app.cluster.essential-roles").ToList();
     }
-    
+
     public TimeSpan DownRemovalMargin { get; }
 
     public virtual Props DowningActorProps => RoleBasedResolver.props(DownRemovalMargin, _essentialRoles);
