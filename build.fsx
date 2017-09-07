@@ -20,7 +20,7 @@ let tags = ["";]
 let configuration = "Release"
 
 // Read release notes and version
-let solutionFile = FindFirstMatchingFile "*.sln" __SOURCE_DIRECTORY__  // dynamically look up the solution
+let solutionFile = FindFirstMatchingFile "./src/*.sln" __SOURCE_DIRECTORY__  // dynamically look up the solution
 let buildNumber = environVarOrDefault "BUILD_NUMBER" "0"
 let preReleaseVersionSuffix = (if (not (buildNumber = "0")) then (buildNumber) else "") + "-beta"
 let versionSuffix = 
@@ -68,7 +68,7 @@ Target "RestorePackages" (fun _ ->
 )
 
 Target "BuildSolution" (fun _ ->
-    MSBuildWithDefaults "Build" ["./Zynga.Akka.Cluster.sln"]
+    MSBuildWithDefaults "Build" ["./src/Zynga.Akka.Cluster.sln"]
     |> Log "AppBuild-Output: "
 )
 
