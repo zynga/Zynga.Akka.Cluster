@@ -4,9 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zynga.Akka.Cluster", "src\Zynga.Akka.Cluster\Zynga.Akka.Cluster.csproj", "{BA596437-296C-457A-8837-0FF1A899EF2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zynga.Akka.Cluster", ".\Zynga.Akka.Cluster\Zynga.Akka.Cluster.csproj", "{BA596437-296C-457A-8837-0FF1A899EF2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zynga.Akka.Cluster.Tests", "src\Zynga.Akka.Cluster.Tests\Zynga.Akka.Cluster.Tests.csproj", "{72F91217-43A8-40F8-9A72-CA16CDD220B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zynga.Akka.Cluster.Tests", ".\Zynga.Akka.Cluster.Tests\Zynga.Akka.Cluster.Tests.csproj", "{72F91217-43A8-40F8-9A72-CA16CDD220B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
